@@ -1,0 +1,19 @@
+{
+  "name": "autobudget",
+  "version": "0.1.0",
+  "description": "A Node app written in Typescript that uses Plaid to write bank account transaction information to a Google Sheets spreadsheet for budgetting.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zachstence/AutoBudget.git"
+  },
+  "author": "Zachary Stence",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zachstence/AutoBudget/issues"
+  },
+  "homepage": "https://github.com/zachstence/AutoBudget#readme"
+}
