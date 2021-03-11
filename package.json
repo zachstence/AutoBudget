@@ -4,9 +4,7 @@
   "description": "A Node app written in Typescript that uses Plaid to write bank account transaction information to a Google Sheets spreadsheet for budgetting.",
   "main": "index.js",
   "scripts": {
-    "start": "npm run build && node build/index.js",
     "start:dev": "nodemon",
-    "build": "rimraf ./build && tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,10 +18,14 @@
   },
   "homepage": "https://github.com/zachstence/AutoBudget#readme",
   "devDependencies": {
+    "@types/google-apps-script": "^1.0.27",
     "@types/node": "^14.14.33",
     "nodemon": "^2.0.7",
     "rimraf": "^3.0.2",
     "ts-node": "^9.1.1",
     "typescript": "^4.2.3"
+  },
+  "dependencies": {
+    "@google/clasp": "^2.3.0"
   }
 }
