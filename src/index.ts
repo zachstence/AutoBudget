@@ -1,1 +1,3 @@
-console.log("Hello, world!");
+function sayHello(): string {
+    return "Hello, world!";
+}
