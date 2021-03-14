@@ -35,8 +35,11 @@ export default class Plaid {
 
     getTransactions(startDate: Date, endDate: Date) {
         const response = this._request("/transactions/get", {
-            start_date: this._dateToYYYYMMDD(startDate),
-            end_date: this._dateToYYYYMMDD(endDate)
+            start_date: startDate,
+            end_date: endDate,
+            options: {
+                count: 500
+            }
         })
         const json = JSON.parse(response.getContentText());
         return json.transactions;

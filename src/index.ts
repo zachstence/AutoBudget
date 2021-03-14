@@ -1,13 +1,20 @@
-import AutoBudget from './AutoBudget';
+import Plaid from './Plaid';
 import getSecrets from './PlaidSecrets';
 
-function secretsToRange(): string[][] {
-    const secrets = getSecrets();
-    return [[secrets.clientId], [secrets.publicToken], [secrets.secret], [secrets.accessToken], [secrets.itemId]];]
-}
+const secrets = getSecrets();
+const plaid = new Plaid(secrets);
 
-const app = new AutoBudget();
-
-function getTransactions() {
-    return app.getTransactions();
+function getTransactions(startDate, endDate) {
+    const rows = plaid.getTransactions(startDate, endDate).map(t => [
+        t.pending,
+        t.name,
+        t.merchant_name,
+        t.date,
+        t.amount,
+    ]);
+    
+    return [
+        ['Pending', 'Name', 'Merchant Name', 'Date', 'Amount'],
+        ...rows
+    ];
 }
